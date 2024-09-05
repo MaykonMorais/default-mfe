@@ -29,7 +29,6 @@ const exposes = {
 
 module.exports = {
   output: 'standalone',
-  distDir: 'dist',
 
   experimental: {
     isrMemoryCacheSize: 0,
