@@ -1,15 +1,38 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
+import {
+  FooterContainer,
+  CopyrightSection,
+  LinksSection,
+  LinksColumn,
+} from "./styles";
+import Link from "next/link";
 
-import { FooterProps } from "./types";
-import styles from "./styles";
-
-const Footer: React.FC<FooterProps> = ({ title }) => {
+const Footer = () => {
   return (
-    <div className="footer">
-      <h1 className="footer__title">{title}</h1>
+    <FooterContainer>
+      <CopyrightSection>
+        &copy; {new Date().getFullYear()} Your Company Name. All rights
+        reserved.
+      </CopyrightSection>
 
-      <style jsx>{styles}</style>
-    </div>
+      <LinksSection>
+        <LinksColumn>
+          <Link href="/home">Home</Link>
+          <Link href="/about">About Us</Link>
+        </LinksColumn>
+
+        <LinksColumn>
+          <Link href="/services">Services</Link>
+          <Link href="/contact">Contact Us</Link>
+        </LinksColumn>
+
+        <LinksColumn>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
+        </LinksColumn>
+      </LinksSection>
+    </FooterContainer>
   );
 };
 
